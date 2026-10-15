@@ -1,0 +1,3 @@
+- Racing the Roots (Build V0.3): web racing game, 140 cars (JDM/SUPER/DTM/SELLER/FORMEL × 4 stages), 30 tracks in Tokyo/Vice/Bali vibes at real lengths, photoreal tracks, modern UI [2026-10-14]
+- Game source zip saved to artifacts/Racing-the-Roots-game-files.zip [2026-10-14]
+- OG share card and X banner regenerated for Racing the Roots (x:game, custom card) [2026-10-14]

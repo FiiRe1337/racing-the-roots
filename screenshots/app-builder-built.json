@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Racing the Roots",
+      "hasCanvas": true,
+      "bodyTextLen": 87,
+      "bodyTextHash": "3ac1e452530d000462d5c731cb4525ff272cd509cc59c262ad398bc91d724eb0",
+      "bodyTextPrefix": "BUILD V0.3 Racing the Roots Singleplayer Server Browser Open Wor",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Racing the Roots",
+      "hasCanvas": true,
+      "bodyTextLen": 87,
+      "bodyTextHash": "3ac1e452530d000462d5c731cb4525ff272cd509cc59c262ad398bc91d724eb0",
+      "bodyTextPrefix": "BUILD V0.3 Racing the Roots Singleplayer Server Browser Open Wor",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
