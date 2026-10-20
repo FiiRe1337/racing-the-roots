@@ -1,0 +1,31 @@
+name: replay
+on:
+  push:
+    paths: ['native/replay/**', '.github/workflows/replay.yml']
+  pull_request:
+    paths: ['native/replay/**', '.github/workflows/replay.yml']
+defaults:
+  run:
+    working-directory: native/replay
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [g++, clang++]
+        build: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ninja-build clang
+      - run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build }} -DCMAKE_CXX_COMPILER=${{ matrix.compiler }}
+      - run: cmake --build build
+      - run: ctest --test-dir build --output-on-failure
+  sanitizers:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ninja-build
+      - run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer"
+      - run: cmake --build build
+      - run: ctest --test-dir build --output-on-failure

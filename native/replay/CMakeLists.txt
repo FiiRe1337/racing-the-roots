@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.20)
+project(roots_replay LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_library(roots_replay src/format.cpp)
+target_include_directories(roots_replay PUBLIC include)
+if(MSVC)
+  target_compile_options(roots_replay PRIVATE /W4 /WX)
+else()
+  target_compile_options(roots_replay PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()
+
+option(ROOTS_REPLAY_TESTS "Tests bauen" ON)
+if(ROOTS_REPLAY_TESTS)
+  enable_testing()
+  add_executable(replay_tests tests/replay_tests.cpp)
+  target_link_libraries(replay_tests PRIVATE roots_replay)
+  add_test(NAME replay_tests COMMAND replay_tests)
+endif()
